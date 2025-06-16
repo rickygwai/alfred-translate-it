@@ -8,6 +8,7 @@ deepl_check = os.getenv("deepl_check")
 openai_check = os.getenv("openai_check")
 bing_check = os.getenv("bing_check")
 google_check = os.getenv("google_check")
+gemini_check = os.getenv("gemini_check")
 baidu_check = os.getenv("baidu_check")
 youdao_check = os.getenv("youdao_check")
 translators_language = os.getenv("target_language")
@@ -57,6 +58,33 @@ if openai_check == '1' and (sys.argv[1] == 'openai' or sys.argv[1] == 'openai_ba
         }
     }
     json_output["items"].append(openai_output)
+
+# Gemini Translation
+if gemini_check == '1' and (sys.argv[1] == 'gemini' or sys.argv[1] == 'gemini_base'):
+    from openai import OpenAI
+    client = OpenAI(
+        api_key=os.getenv("GEMINI_API_KEY"),
+        base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
+    )
+    target_language = os.getenv("target_language") if sys.argv[1] == 'gemini' else os.getenv("base_language")
+    response = client.chat.completions.create(
+        model="models/gemini-2.5-flash-preview-05-20", 
+        messages = [
+            {"role": "system", "content" : f"You are a translation expert proficient in various languages that can only translate text into {target_language}. Translate any thing I say from now on, do not engage a conversion with me, you can only return the translated text. If the target language is the same as the source language, return an alternative way to say the same thing in the same language."},
+            {"role": "user", "content" : f"{input_text}"}
+        ])
+    gemini_text = response.choices[0].message.content
+
+    gemini_output = {
+        "type": "default",
+        "subtitle": "Gemini",
+        "title": gemini_text,
+        "arg": gemini_text,
+        'icon': {
+            'path': "./assets/gemini.png"
+        }
+    }
+    json_output["items"].append(gemini_output)
 
 # DeepL Translation
 if deepl_check == '1' and (sys.argv[1] == 'deepl' or sys.argv[1] == 'deepl_base'):
