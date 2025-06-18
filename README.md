@@ -23,6 +23,9 @@ conda install -c conda-forge translators
 git clone https://github.com/UlionTse/translators.git
 cd translators
 python setup.py install
+
+# Compile Command
+zip -r Translate-It.alfredworkflow . -x "*.git*" "*/*.pyc" "*__pycache__*" "*.DS_Store"
 ```
 
 ## Usage
