@@ -236,6 +236,52 @@
 				<true/>
 			</dict>
 		</array>
+		<key>F4D9E7C8-6A4A-4C3B-93C8-3D6E5F8B7A9C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>99BF70FA-7302-441E-9270-2EF7A37EC770</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8AA9AE0F-7123-4ABE-A81D-52EC8D7FC00B</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Large text</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>A3B2C1D0-5E4F-4A3B-8C2D-1E0F9A8B7C6D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7EEB44BA-23D0-43F0-8A9E-2E3150AFC36B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F9B1021D-242C-4D24-B491-16C3980CD60E</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Large text</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C466FA7B-3E7A-42FD-8F4B-88704ABEA186</key>
 		<array>
 			<dict>
@@ -410,7 +456,7 @@
 				<key>runningsubtext</key>
 				<string>Wait for AI ...</string>
 				<key>script</key>
-				<string>export PYTHONPATH='./openailibs/'
+				<string>export PYTHONPATH='./libs/'
 
 /usr/bin/python3 translate.py "openai" "$1"</string>
 				<key>scriptargtype</key>
@@ -461,7 +507,7 @@
 				<key>runningsubtext</key>
 				<string>Wait for Google ...</string>
 				<key>script</key>
-				<string>export PYTHONPATH='./googletranslibs/'
+				<string>export PYTHONPATH='./libs/'
 
 /usr/bin/python3 translate.py "google" "$1"</string>
 				<key>scriptargtype</key>
@@ -934,7 +980,7 @@
 				<key>runningsubtext</key>
 				<string>Wait for AI ...</string>
 				<key>script</key>
-				<string>export PYTHONPATH='./openailibs/'
+				<string>export PYTHONPATH='./libs/'
 
 /usr/bin/python3 translate.py "openai_base" "$1"</string>
 				<key>scriptargtype</key>
@@ -1074,7 +1120,7 @@
 				<key>runningsubtext</key>
 				<string>Wait for Google ...</string>
 				<key>script</key>
-				<string>export PYTHONPATH='./googletranslibs/'
+				<string>export PYTHONPATH='./libs/'
 
 /usr/bin/python3 translate.py "google_base" "$1"</string>
 				<key>scriptargtype</key>
@@ -1481,6 +1527,108 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Wait for Gemini ...</string>
+				<key>script</key>
+				<string>export PYTHONPATH='./libs/'
+
+/usr/bin/python3 translate.py "gemini" "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Translate with Gemini</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F4D9E7C8-6A4A-4C3B-93C8-3D6E5F8B7A9C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:keyword_base}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Wait for Gemini ...</string>
+				<key>script</key>
+				<string>export PYTHONPATH='./libs/'
+
+/usr/bin/python3 translate.py "gemini_base" "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Translate to Base with Gemini</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A3B2C1D0-5E4F-4A3B-8C2D-1E0F9A8B7C6D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## [Translate-it](https://www.github.com/yinan-c/alfred-translate-it)
@@ -1762,6 +1910,20 @@ Translate text with multiple services. This workflow also support [Universal Act
 			<key>ypos</key>
 			<real>950</real>
 		</dict>
+		<key>F4D9E7C8-6A4A-4C3B-93C8-3D6E5F8B7A9C</key>
+		<dict>
+			<key>xpos</key>
+			<real>245</real>
+			<key>ypos</key>
+			<real>195</real>
+		</dict>
+		<key>A3B2C1D0-5E4F-4A3B-8C2D-1E0F9A8B7C6D</key>
+		<dict>
+			<key>xpos</key>
+			<real>245</real>
+			<key>ypos</key>
+			<real>800</real>
+		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array>
@@ -1780,11 +1942,32 @@ Translate text with multiple services. This workflow also support [Universal Act
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>1st Translation Keyword</string>
+			<string>Translation Keyword 1</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
 			<string>keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>trans</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Translation keyword for 2nd target language</string>
+			<key>label</key>
+			<string>Translation Keyword 2</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword_base</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1847,6 +2030,82 @@ Translate text with multiple services. This workflow also support [Universal Act
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Requires Gemini API</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Gemini</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>gemini_check</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Deprecated: requires extra library and slow.</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Bing</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>bing_check</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Deprecated: requires extra library and slow.</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Baidu</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>baidu_check</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Deprecated: requires extra library and slow.</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Youdao</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>youdao_check</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string></string>
 				<key>placeholder</key>
 				<string></string>
@@ -1889,28 +2148,7 @@ Translate text with multiple services. This workflow also support [Universal Act
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>https://api.openai.com/v1</string>
-				<key>placeholder</key>
 				<string></string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string></string>
-			<key>label</key>
-			<string>OpenAI base</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>openai_base_url</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>gpt-4o</string>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
@@ -1921,11 +2159,11 @@ Translate text with multiple services. This workflow also support [Universal Act
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>OpenAI Model</string>
+			<string>Gemini API key</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
-			<string>openai_model</string>
+			<string>GEMINI_API_KEY</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2367,7 +2605,7 @@ Translate text with multiple services. This workflow also support [Universal Act
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>Google 1st Language</string>
+			<string>Google Target Language</string>
 			<key>type</key>
 			<string>popupbutton</string>
 			<key>variable</key>
@@ -2509,7 +2747,7 @@ Translate text with multiple services. This workflow also support [Universal Act
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>DeepL 1st Language</string>
+			<string>DeepL Target Language</string>
 			<key>type</key>
 			<string>popupbutton</string>
 			<key>variable</key>
@@ -2530,7 +2768,7 @@ Translate text with multiple services. This workflow also support [Universal Act
 			<key>description</key>
 			<string>Language code used for OpenAI and other services.</string>
 			<key>label</key>
-			<string>1st language code</string>
+			<string>Target language code</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
@@ -2540,22 +2778,168 @@ Translate text with multiple services. This workflow also support [Universal Act
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>trans</string>
+				<string>en</string>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
-				<true/>
+				<false/>
 				<key>trim</key>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Translation keyword for 2nd target language</string>
+			<string>Base languages configs are for a second translation target, useful for bidirectional translation, e.g. en&lt;-&gt;zh</string>
 			<key>label</key>
-			<string>2nd Translation Keyword</string>
+			<string>Base language code</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
-			<string>keyword_base</string>
+			<string>base_language</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>EN-US</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>-</string>
+						<string></string>
+					</array>
+					<array>
+						<string>Bulgarian</string>
+						<string>BG</string>
+					</array>
+					<array>
+						<string>Chinese (Simplified)</string>
+						<string>ZH</string>
+					</array>
+					<array>
+						<string>Czech</string>
+						<string>CS</string>
+					</array>
+					<array>
+						<string>Danish</string>
+						<string>DA</string>
+					</array>
+					<array>
+						<string>Dutch</string>
+						<string>NL</string>
+					</array>
+					<array>
+						<string>English (American)</string>
+						<string>EN-US</string>
+					</array>
+					<array>
+						<string>English (British)</string>
+						<string>EN-GB</string>
+					</array>
+					<array>
+						<string>Estonian</string>
+						<string>ET</string>
+					</array>
+					<array>
+						<string>Finnish</string>
+						<string>FI</string>
+					</array>
+					<array>
+						<string>French</string>
+						<string>FR</string>
+					</array>
+					<array>
+						<string>German</string>
+						<string>DE</string>
+					</array>
+					<array>
+						<string>Greek</string>
+						<string>EL</string>
+					</array>
+					<array>
+						<string>Hungarian</string>
+						<string>HU</string>
+					</array>
+					<array>
+						<string>Indonesian</string>
+						<string>ID</string>
+					</array>
+					<array>
+						<string>Italian</string>
+						<string>IT</string>
+					</array>
+					<array>
+						<string>Japanese</string>
+						<string>JA</string>
+					</array>
+					<array>
+						<string>Korean</string>
+						<string>KO</string>
+					</array>
+					<array>
+						<string>Latvian</string>
+						<string>LV</string>
+					</array>
+					<array>
+						<string>Lithuanian</string>
+						<string>LT</string>
+					</array>
+					<array>
+						<string>Norwegian (Bokmål)</string>
+						<string>NB</string>
+					</array>
+					<array>
+						<string>Polish</string>
+						<string>PL</string>
+					</array>
+					<array>
+						<string>Portuguese (all Portuguese varieties excluding Brazilian Portuguese)</string>
+						<string>PT-PT</string>
+					</array>
+					<array>
+						<string>Portuguese (Brazilian)</string>
+						<string>PT-BR</string>
+					</array>
+					<array>
+						<string>Romanian</string>
+						<string>RO</string>
+					</array>
+					<array>
+						<string>Russian</string>
+						<string>RU</string>
+					</array>
+					<array>
+						<string>Slovak</string>
+						<string>SK</string>
+					</array>
+					<array>
+						<string>Slovenian</string>
+						<string>SL</string>
+					</array>
+					<array>
+						<string>Spanish</string>
+						<string>ES</string>
+					</array>
+					<array>
+						<string>Swedish</string>
+						<string>SV</string>
+					</array>
+					<array>
+						<string>Turkish</string>
+						<string>TR</string>
+					</array>
+					<array>
+						<string>Ukrainian</string>
+						<string>UK</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>DeepL Base Language</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>deepl_base_language</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3001,239 +3385,17 @@ Translate text with multiple services. This workflow also support [Universal Act
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>Google 2nd Language</string>
+			<string>Google Base Language</string>
 			<key>type</key>
 			<string>popupbutton</string>
 			<key>variable</key>
 			<string>google_base_language</string>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>EN-US</string>
-				<key>pairs</key>
-				<array>
-					<array>
-						<string>-</string>
-						<string></string>
-					</array>
-					<array>
-						<string>Bulgarian</string>
-						<string>BG</string>
-					</array>
-					<array>
-						<string>Chinese (Simplified)</string>
-						<string>ZH</string>
-					</array>
-					<array>
-						<string>Czech</string>
-						<string>CS</string>
-					</array>
-					<array>
-						<string>Danish</string>
-						<string>DA</string>
-					</array>
-					<array>
-						<string>Dutch</string>
-						<string>NL</string>
-					</array>
-					<array>
-						<string>English (American)</string>
-						<string>EN-US</string>
-					</array>
-					<array>
-						<string>English (British)</string>
-						<string>EN-GB</string>
-					</array>
-					<array>
-						<string>Estonian</string>
-						<string>ET</string>
-					</array>
-					<array>
-						<string>Finnish</string>
-						<string>FI</string>
-					</array>
-					<array>
-						<string>French</string>
-						<string>FR</string>
-					</array>
-					<array>
-						<string>German</string>
-						<string>DE</string>
-					</array>
-					<array>
-						<string>Greek</string>
-						<string>EL</string>
-					</array>
-					<array>
-						<string>Hungarian</string>
-						<string>HU</string>
-					</array>
-					<array>
-						<string>Indonesian</string>
-						<string>ID</string>
-					</array>
-					<array>
-						<string>Italian</string>
-						<string>IT</string>
-					</array>
-					<array>
-						<string>Japanese</string>
-						<string>JA</string>
-					</array>
-					<array>
-						<string>Korean</string>
-						<string>KO</string>
-					</array>
-					<array>
-						<string>Latvian</string>
-						<string>LV</string>
-					</array>
-					<array>
-						<string>Lithuanian</string>
-						<string>LT</string>
-					</array>
-					<array>
-						<string>Norwegian (Bokmål)</string>
-						<string>NB</string>
-					</array>
-					<array>
-						<string>Polish</string>
-						<string>PL</string>
-					</array>
-					<array>
-						<string>Portuguese (all Portuguese varieties excluding Brazilian Portuguese)</string>
-						<string>PT-PT</string>
-					</array>
-					<array>
-						<string>Portuguese (Brazilian)</string>
-						<string>PT-BR</string>
-					</array>
-					<array>
-						<string>Romanian</string>
-						<string>RO</string>
-					</array>
-					<array>
-						<string>Russian</string>
-						<string>RU</string>
-					</array>
-					<array>
-						<string>Slovak</string>
-						<string>SK</string>
-					</array>
-					<array>
-						<string>Slovenian</string>
-						<string>SL</string>
-					</array>
-					<array>
-						<string>Spanish</string>
-						<string>ES</string>
-					</array>
-					<array>
-						<string>Swedish</string>
-						<string>SV</string>
-					</array>
-					<array>
-						<string>Turkish</string>
-						<string>TR</string>
-					</array>
-					<array>
-						<string>Ukrainian</string>
-						<string>UK</string>
-					</array>
-				</array>
-			</dict>
-			<key>description</key>
-			<string></string>
-			<key>label</key>
-			<string>DeepL 2nd Language</string>
-			<key>type</key>
-			<string>popupbutton</string>
-			<key>variable</key>
-			<string>deepl_base_language</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>en</string>
-				<key>placeholder</key>
-				<string></string>
-				<key>required</key>
-				<false/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>Base languages configs are for a second translation target, useful for bidirectional translation, e.g. en&lt;-&gt;zh</string>
-			<key>label</key>
-			<string>2nd language code</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>base_language</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<false/>
-				<key>required</key>
-				<false/>
-				<key>text</key>
-				<string>Deprecated: requires extra library and slow.</string>
-			</dict>
-			<key>description</key>
-			<string></string>
-			<key>label</key>
-			<string>Youdao</string>
-			<key>type</key>
-			<string>checkbox</string>
-			<key>variable</key>
-			<string>youdao_check</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<false/>
-				<key>required</key>
-				<false/>
-				<key>text</key>
-				<string>Deprecated: requires extra library and slow.</string>
-			</dict>
-			<key>description</key>
-			<string></string>
-			<key>label</key>
-			<string>Bing</string>
-			<key>type</key>
-			<string>checkbox</string>
-			<key>variable</key>
-			<string>bing_check</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<false/>
-				<key>required</key>
-				<false/>
-				<key>text</key>
-				<string>Deprecated: requires extra library and slow.</string>
-			</dict>
-			<key>description</key>
-			<string></string>
-			<key>label</key>
-			<string>Baidu</string>
-			<key>type</key>
-			<string>checkbox</string>
-			<key>variable</key>
-			<string>baidu_check</string>
-		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.5</string>
+	<string>1.4.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/yinan-c/alfred-translate-it</string>
 </dict>

@@ -61,14 +61,12 @@ if openai_check == '1' and (sys.argv[1] == 'openai' or sys.argv[1] == 'openai_ba
 
 # Gemini Translation
 if gemini_check == '1' and (sys.argv[1] == 'gemini' or sys.argv[1] == 'gemini_base'):
-    from openai import OpenAI
-    client = OpenAI(
-        api_key=os.getenv("GEMINI_API_KEY"),
-        base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
-    )
+    import openai
+    openai.api_key = os.getenv("GEMINI_API_KEY")
+    openai.api_base = "https://generativelanguage.googleapis.com/v1beta"
     target_language = os.getenv("target_language") if sys.argv[1] == 'gemini' else os.getenv("base_language")
-    response = client.chat.completions.create(
-        model="models/gemini-2.5-flash-preview-05-20", 
+    response = openai.ChatCompletion.create(
+        model="models/gemini-2.5-flash-lite-preview-06-17",
         messages = [
             {"role": "system", "content" : f"You are a translation expert proficient in various languages that can only translate text into {target_language}. Translate any thing I say from now on, do not engage a conversion with me, you can only return the translated text. If the target language is the same as the source language, return an alternative way to say the same thing in the same language."},
             {"role": "user", "content" : f"{input_text}"}
@@ -151,7 +149,7 @@ if sys.argv[1] == 'baidu_base':
 if sys.argv[1] == 'youdao_base':
     json_output = translation_output(youdao_check, 'youdao', "./assets/youdao.png", input_text, base_language, json_output)
 # Check if no translation method selected
-if deepl_check == '0' and openai_check == '0' and bing_check == '0' and google_check == '0' and baidu_check == '0' and youdao_check == '0':
+if deepl_check == '0' and openai_check == '0' and bing_check == '0' and google_check == '0' and baidu_check == '0' and youdao_check == '0' and gemini_check == '0':
     no_selection_output = {
         "type": "default",
         "title": "Please select at least one translation method",
